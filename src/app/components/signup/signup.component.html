@@ -1,0 +1,26 @@
+<section class="signup-form">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <mat-form-field>
+      <input type="name" matInput placeholder="Nafn" ngModel name="name" required #nameInput="ngModel">
+      <mat-error *ngIf="emailInput.hasError('required')">Má ekki vera tómt</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">Netfang er vitlaust skráð.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="email" matInput placeholder="Netfang" ngModel name="email" email required #emailInput="ngModel">
+      <mat-error *ngIf="emailInput.hasError('required')">Má ekki vera tómt</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">Netfang er vitlaust skráð.</mat-error>
+    </mat-form-field>
+    <mat-form-field hintLabel="A.m.k. 6 stafir.">
+      <input type="password" matInput placeholder="Your password" ngModel name="password" required minlength="6" #pwInput="ngModel">
+      <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
+      <mat-error>A.m.k. 6 stafir</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="payerid" matInput placeholder="Kennitala greiðanda" ngModel name="payerid" required minlength="10" #payeridInput="ngModel">
+      <mat-hint align="end">{{ pwInput.value?.length }} / 10</mat-hint>
+      <mat-error>10 stafir</mat-error>
+    </mat-form-field>
+    <mat-checkbox ngModel name="agree" required color="primary">Samþykkja skilmála</mat-checkbox>
+    <button type="submit" mat-raised-button color="primary" >Submit</button>
+  </form>
+</section>

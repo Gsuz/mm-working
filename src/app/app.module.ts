@@ -8,9 +8,6 @@ import { MaterialModule } from './modules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// services
-import { AppRoutingModule } from './services/app-routing.module';
-
 // App Layout Components
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './layout/container/container.component';
@@ -21,6 +18,9 @@ import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { SettingsComponent } from './components//settings/settings.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+
+// Routing
+import { AppRoutingModule } from './services/app-routing.module';
 
 
 @NgModule({
